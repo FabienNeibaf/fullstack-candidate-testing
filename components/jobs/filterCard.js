@@ -2,14 +2,18 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 const JobFilterCard = ({ category, options }) => (
-  <li>
-    <h4>{category}</h4>
-    <ul>
+  <li className="bg-white mb-4 p-4 border border-gray-200">
+    <h4 className="uppercase font-bold">
+      {category.replace('_', ' ')}
+    </h4>
+    <ul className="pl-0">
       {options.map((option) => (
         <li key={option.key}>
-          <button>
+          <button className="text-left py-1">
             <span>{option.key}</span>
-            <span>{option.doc_count}</span>
+            <span className="text-gray-400 p-2">
+              {option.doc_count}
+            </span>
           </button>
         </li>
       ))}

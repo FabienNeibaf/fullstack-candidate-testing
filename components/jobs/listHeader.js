@@ -4,11 +4,12 @@ import React from 'react'
 import { JobSort } from './sort'
 
 const JobListHeader = ({ total }) => (
-  <header>
+  <header className="flex py-2 items-center">
     <div>
-      {total} job postings
+      <span className='font-bold'>{total} </span>
+      job postings
     </div>
-    <JobSort />
+    <JobSort show="hidden" />
   </header>
 )
 

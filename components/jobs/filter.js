@@ -15,7 +15,7 @@ const JobFilter = () => {
   }, [])
 
   return (
-    <section>
+    <section className="hidden sm:block sm:flex-none">
       <div>{error}</div>
       <ul>
         {map(filters, (options, key) =>

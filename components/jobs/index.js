@@ -5,10 +5,12 @@ import { JobList } from './list'
 import { JobSearch } from './search'
 
 const Jobs = () => (
-  <div>
+  <div className="sm:p-4">
     <JobSearch />
-    <JobFilter />
-    <JobList />
+    <div className="flex space-x-3 flex-wrap sm:flex-nowrap">
+      <JobFilter />
+      <JobList />
+    </div>
   </div>
 )
 

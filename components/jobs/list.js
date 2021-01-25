@@ -26,7 +26,7 @@ const JobList = () => {
   }
 
   return (
-    <section>
+    <section className="bg-white p-4 border border-gray-200 flex-auto">
       <Error message={error} />
       <JobListHeader total={total} />
       <JobGroup jobs={jobs} />

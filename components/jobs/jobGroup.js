@@ -2,20 +2,11 @@ import { map } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import { JobCard } from './jobCard'
+import { JobGroupItem } from './jobGroupItem'
 
 const JobGroup = ({ jobs }) => (
   <ul>
-    {map((jobs), (group) => (
-      <li key={group.name}>
-        <h4>
-          {group.total_jobs_in_hospital} jobs for {group.name}
-        </h4>
-        <ul>
-          {map(group.items, (item) => <JobCard key={item.job_id} item={item} />)}
-        </ul>
-      </li>
-    ))}
+    {map((jobs), (group) => <JobGroupItem key={group.name} group={group} />)}
   </ul>
 )
 

@@ -6,7 +6,7 @@ import { Header } from './header'
 import { Main } from './main'
 
 const Layout = ({ children }) => (
-  <div>
+  <div className="bg-gray-100">
     <Header />
     <Main>
       {children}
