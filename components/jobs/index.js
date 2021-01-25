@@ -1,7 +1,15 @@
 import React from 'react'
 
+import { JobFilter } from './filter'
+import { JobList } from './list'
+import { JobSearch } from './search'
+
 const Jobs = () => (
-  <div>Jobs</div>
+  <div>
+    <JobSearch />
+    <JobFilter />
+    <JobList />
+  </div>
 )
 
 export { Jobs }

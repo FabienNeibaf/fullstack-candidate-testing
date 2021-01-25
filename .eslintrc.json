@@ -27,6 +27,8 @@
             "error",
             "unix"
         ],
+        "max-len": ["error", { "code": 100 }],
+        "no-trailing-spaces": "error",
         "quotes": [
             "error",
             "single"
