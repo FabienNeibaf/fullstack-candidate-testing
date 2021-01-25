@@ -8,8 +8,18 @@
     "start": "next start"
   },
   "dependencies": {
+    "autoprefixer": "^10.2.3",
+    "lodash": "^4.17.20",
+    "moment-timezone": "^0.5.32",
     "next": "10.0.3",
+    "postcss": "^8.2.4",
+    "prop-types": "^15.7.2",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "tailwindcss": "^2.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.18.0",
+    "eslint-plugin-react": "^7.22.0"
   }
 }

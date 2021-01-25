@@ -1,6 +1,11 @@
+import React from 'react'
+
+import { Jobs } from '../components/jobs'
+import { Layout } from '../components/layout'
+
 const Index = () => (
-  <p>
-Hello, Clipboard health!
-  </p>
+  <Layout>
+    <Jobs />
+  </Layout>
 )
 export default Index
