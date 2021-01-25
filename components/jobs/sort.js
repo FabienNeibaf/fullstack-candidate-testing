@@ -1,18 +1,21 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import { JobSortingOption } from './sortingOption'
+import { JobSortingSelection } from './sortingSelection'
 
 const JobSort = ({ show }) => (
-  <div className={`flex flex-auto justify-end items-center ${show}`}>
+  <div className={`items-center ${show}`}>
     <span className="text-gray-400 pr-2">
       Sort by
     </span>
     <ul className="flex">
-      <li className="p-2">Location</li>
-      <li className="p-2">Role</li>
-      <li className="p-2">Department</li>
-      <li className="p-2">Education</li>
-      <li className="p-2">Experience</li>
+      <JobSortingOption value="Location" />
+      <JobSortingOption value="Role" />
+      <JobSortingOption value="Department" />
+      <JobSortingOption value="Education" />
+      <JobSortingOption value="Experience" />
     </ul>
+    <JobSortingSelection />
   </div>
 )
 

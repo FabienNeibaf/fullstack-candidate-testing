@@ -5,7 +5,7 @@ import { getInitials } from '../utils/string'
 const Header = () => (
   <header className="bg-white flex items-center uppercase border-b border-gray-200 font-bold">
     <h1 className="p-4 w-48 text-blue-500">
-      Health Explore
+      <a href="/">Health Explore</a>
     </h1>
     <ul className="flex flex-auto items-center justify-center">
       <li className="p-4">Profile</li>
