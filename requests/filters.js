@@ -3,7 +3,7 @@ const fetchFilters = async () => {
     const response = await fetch('/api/filters')
     return response.json()
   } catch (err) {
-    return 'Unable to fetch filters'
+    throw 'Unable to fetch filters'
   }
 }
 

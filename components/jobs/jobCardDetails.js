@@ -9,7 +9,7 @@ const JobCardDetails = ({ show, item }) => {
       <div className="flex-auto">
         <p className="flex py-2">
           <span className="font-bold w-2/6">Department</span>
-          <span className="w-3/6">{item.department}</span>
+          <span className="w-3/6">{item.department?.join(', ')}</span>
         </p>
         <p className="flex py-2">
           <span className="font-bold w-2/6">Hours / shifts</span>

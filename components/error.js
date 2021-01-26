@@ -5,7 +5,7 @@ const Error = ({ message }) => {
   if (!message) return null
 
   return (
-    <div>
+    <div className="text-red-600 p-2 bg-red-100 rounded-md">
       {message}
     </div>
   )

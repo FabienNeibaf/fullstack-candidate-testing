@@ -1,20 +1,24 @@
-import PropTypes from 'prop-types'
+import { reduce } from 'lodash'
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import { JobSort } from './sort'
+import { JobSortingSelection } from './sortingSelection'
 
-const JobListHeader = ({ total }) => (
-  <header className="flex py-2 items-center">
-    <div>
-      <span className='font-bold'>{total} </span>
-      job postings
-    </div>
-    <JobSort show="hidden" />
-  </header>
-)
+const JobListHeader = () => {
+  const { list } = useSelector((state) => state.jobs)
 
-JobListHeader.propTypes = {
-  total: PropTypes.number.isRequired
+  const total = reduce(list, (res, cur) => res += cur.total_jobs_in_hospital, 0)
+  return (
+    <header className="flex py-2 items-center flex-wrap">
+      <div className="flex-auto space-x-2">
+        <span className='font-bold'>{total}</span>
+        <span>job postings</span>
+      </div>
+      <JobSort />
+      <JobSortingSelection />
+    </header>
+  )
 }
 
 export { JobListHeader }
