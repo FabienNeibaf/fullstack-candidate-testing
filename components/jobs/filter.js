@@ -1,11 +1,12 @@
 import { map } from 'lodash'
+import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 
 import { Error } from '../error'
 import { fetchFilters } from '../../requests'
 import { JobFilterCard } from './filterCard'
 
-const JobFilter = () => {
+const JobFilter = ({ show }) => {
   const [filters, setFilters] = useState({})
   const [error, setError] = useState()
 
@@ -15,8 +16,10 @@ const JobFilter = () => {
       .catch(setError)
   }, [])
 
+  if (!show) return null
+
   return (
-    <section className="hidden md:block md:flex-none md:w-72 lg:w-96">
+    <section>
       <Error message={error} />
       <ul className="flex flex-wrap">
         {map(filters, (options, key) =>
@@ -25,6 +28,10 @@ const JobFilter = () => {
       </ul>
     </section>
   )
+}
+
+JobFilter.propTypes = {
+  show: PropTypes.bool
 }
 
 export { JobFilter }

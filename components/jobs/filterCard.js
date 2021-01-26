@@ -14,7 +14,7 @@ const JobFilterCard = ({ category, options }) => {
   }
 
   return (
-    <li className="bg-white mb-4 p-4 border border-gray-200 w-96">
+    <li className="w-full bg-white lg:mb-4 p-4 border border-gray-200 lg:w-96">
       <h4 className=" px-1 uppercase font-bold">
         {category.replace('_', ' ')}
       </h4>

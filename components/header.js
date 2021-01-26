@@ -1,13 +1,11 @@
-import Image from 'next/image'
 import React from 'react'
 
 import { getInitials } from '../utils/string'
+import { Menu } from './menu'
 
 const Header = () => (
-  <header className="bg-white flex items-center uppercase border-b border-gray-200 font-bold">
-    <button className="ml-3 leading-none">
-      <Image src="/menu.png" width="15" height="15" alt="menu" />
-    </button>
+  <header className="relative bg-white flex items-center uppercase border-b border-gray-200 font-bold">
+    <Menu />
     <h1 className="p-4 w-48 text-blue-500 flex-auto">
       <a href="/">Health Explore</a>
     </h1>
