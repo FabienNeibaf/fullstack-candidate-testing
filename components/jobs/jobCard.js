@@ -20,16 +20,16 @@ const JobCard = ({ item }) => {
         <h4 className="font-bold">
           {item.job_title}
         </h4>
-        <p className="flex items-center space-x-2">
-          <span>{item.job_type}</span>
-          <span>|</span>
-          <span>
+        <p className="md:flex items-center space-x-2">
+          <span className="align-middle">{item.job_type}</span>
+          <span className="align-middle">{' | '}</span>
+          <span className="align-middle">
             <Rate value={item.salary_range[0]} /> - <Rate value={item.salary_range[1]} />
           </span>
-          <span>|</span>
-          <span>{item.city}</span>
-          <span className="flex-auto" />
-          <span>{moment(item.created).fromNow()}</span>
+          <span className="align-middle">{' | '}</span>
+          <span className="align-middle">{item.city}</span>
+          <span className="md:flex-auto" />
+          <span className="inline-block align-middle">{moment(item.created).fromNow()}</span>
         </p>
       </button>
       <JobCardDetails item={item} show={viewDetails} />
