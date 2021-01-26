@@ -1,4 +1,4 @@
-import { filter, isEmpty, map, orderBy, reduce } from 'lodash'
+import { filter, isEmpty, map, orderBy, values } from 'lodash'
 
 const sortJobGroups = (groups, order) => {
   if (!order) return groups
@@ -16,14 +16,16 @@ const sortJobItems = (items, sorting) => {
     Experience: 'experience'
   }
 
-  return reduce(
-    sorting,
-    (res, val, key) => {
-      if (/Role|Experience/.test(key)) return orderBy(res, (obj) => obj[sortMap[key]][0], [val])
-      return orderBy(res, [sortMap[key]], [val])
-    },
-    [...items]
-  )
+  const funcs = map(sorting, (val, key) => {
+    if (/Department|Education/.test(key)) {
+      return (obj) => obj[sortMap[key]][0]
+    }
+    return (obj) => obj[sortMap[key]]
+  })
+
+  const orders = values(sorting)
+
+  return orderBy(items, funcs, orders)
 }
 
 const filterCategoryItems = (items, category) => {
