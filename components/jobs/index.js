@@ -8,7 +8,9 @@ const Jobs = () => (
   <div className="sm:p-4">
     <JobSearch />
     <div className="flex md:space-x-3 flex-wrap sm:flex-nowrap">
-      <JobFilter />
+      <div className="hidden md:block md:w-96">
+        <JobFilter show={true} />
+      </div>
       <JobList />
     </div>
   </div>
