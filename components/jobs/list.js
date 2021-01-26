@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import React, { useEffect, useState } from 'react'
 
 import { Error } from '../error'
@@ -8,14 +8,15 @@ import { JobListHeader } from './listHeader'
 import { SET_JOBS } from '../../constants/strings'
 
 const JobList = () => {
-  const [error, setError] = useState()
   const dispatch = useDispatch()
+  const [error, setError] = useState()
+  const { filter } = useSelector((state) => state.jobs)
 
   useEffect(() => {
-    fetchJobs()
+    fetchJobs(filter)
       .then(updateState)
       .catch(setError)
-  }, [])
+  }, [filter])
 
   const updateState = (data) => {
     if (!data) return

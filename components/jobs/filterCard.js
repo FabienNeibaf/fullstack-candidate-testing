@@ -2,8 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { fetchJobs } from '../../requests'
-import { SET_JOBS, SET_JOB_FILTER } from '../../constants/strings'
+import { SET_JOB_FILTER } from '../../constants/strings'
 
 const JobFilterCard = ({ category, options }) => {
   const dispatch = useDispatch()
@@ -12,19 +11,10 @@ const JobFilterCard = ({ category, options }) => {
   const handleClick = (value) => () => {
     const filter = { category: { key: category, value } }
     dispatch({ type: SET_JOB_FILTER, filter })
-    fetchJobs(filter)
-      .then(updateState)
-      .catch(console.log)
-  }
-
-  const updateState = (data) => {
-    if (!data) return
-
-    dispatch({ type: SET_JOBS, data })
   }
 
   return (
-    <li className="bg-white mb-4 p-4 border border-gray-200">
+    <li className="bg-white mb-4 p-4 border border-gray-200 w-96">
       <h4 className=" px-1 uppercase font-bold">
         {category.replace('_', ' ')}
       </h4>

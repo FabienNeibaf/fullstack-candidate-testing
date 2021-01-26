@@ -7,7 +7,7 @@ import { JobSearch } from './search'
 const Jobs = () => (
   <div className="sm:p-4">
     <JobSearch />
-    <div className="flex space-x-3 flex-wrap sm:flex-nowrap">
+    <div className="flex md:space-x-3 flex-wrap sm:flex-nowrap">
       <JobFilter />
       <JobList />
     </div>

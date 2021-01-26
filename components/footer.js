@@ -1,8 +1,8 @@
 import React from 'react'
 
 const Footer = () => (
-  <footer className="flex bg-white flex-wrap p-2">
-    <section className="p-2">
+  <footer className="md:flex bg-white flex-wrap p-2">
+    <section className="flex-auto p-2">
       <h2 className="font-bold">About us</h2>
       <p>
         We are a team of nurses, doctors, technologists and executives
@@ -11,7 +11,7 @@ const Footer = () => (
       </p>
       <p>All copyrights reserved &copy; 2020 - Health Explore</p>
     </section>
-    <section className="p-2">
+    <section className="flex-auto p-2">
       <h2 className="font-bold">Sitemap</h2>
       <ul>
         <li>Nurses</li>
@@ -20,7 +20,7 @@ const Footer = () => (
         <li>Jobs</li>
       </ul>
     </section>
-    <section className="p-2">
+    <section className="flex-auto p-2">
       <h2 className="font-bold">Privacy</h2>
       <ul>
         <li>Terms of use</li>

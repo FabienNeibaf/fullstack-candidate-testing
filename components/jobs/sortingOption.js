@@ -1,4 +1,3 @@
-import { find, map } from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { SORT_JOBS } from '../../constants/strings'
@@ -9,31 +8,27 @@ const Options = ({ value }) => {
   const { sorting } = useSelector((state) => state.jobs)
 
   const handleClick = (order) => () => {
-    const prev = find(sorting, (item) => item.value === value)
-
-    const nextSorting = prev ? map(sorting, (item) => {
-      return item.value === value ? { ...item, order } : item
-    }) : [...sorting, { value, order }]
+    const nextSorting = { ...sorting, [value]: order }
 
     dispatch({ type: SORT_JOBS, sorting: nextSorting })
   }
 
   return (
-    <ul className="sort-option-list absolute border border-gray-100 w-full text-center">
+    <ul className="sort-option-list absolute border border-gray-100 w-full text-center bg-white">
       <li className="my-1">
         <button
-          className="px-2 py-1 bg-gray-100 rounded-sm"
-          onClick={handleClick('ASC')}
+          className="px-2 bg-gray-100 rounded-sm"
+          onClick={handleClick('asc')}
         >
-          ASC
+          asc
         </button>
       </li>
       <li className="my-1">
         <button
-          className="px-2 py-1 bg-gray-100 rounded-sm"
-          onClick={handleClick('DSC')}
+          className="px-2 bg-gray-100 rounded-sm"
+          onClick={handleClick('desc')}
         >
-          DSC
+          desc
         </button>
       </li>
     </ul>
