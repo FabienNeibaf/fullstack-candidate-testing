@@ -49,7 +49,6 @@ const filterSearchItems = (items, searchKey) => {
 const withoutEmptyItems = (jobs) => filter(jobs, ({ items }) => !isEmpty(items))
 
 const filterJobsByCategory = (jobs, category) => {
-  console.log({ category })
   if (!category?.key || !category?.value) return jobs
 
   const res = map(jobs, (job) => ({
@@ -61,7 +60,6 @@ const filterJobsByCategory = (jobs, category) => {
 }
 
 const filterJobsBySearchKey = (jobs, searchKey) => {
-  console.log({ searchKey })
   if (!searchKey) return jobs
 
   const res = map(jobs, (job) => ({

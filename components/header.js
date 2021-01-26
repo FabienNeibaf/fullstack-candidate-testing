@@ -18,7 +18,7 @@ const Header = () => (
       <li className="p-4">Lounge</li>
       <li className="p-4">Salary</li>
     </ul>
-    <button className="hidden lg:flex px-4 py-2 font-bold uppercase text-blue-500 border rounded-md border-blue-500 flex">
+    <button className="hidden lg:flex px-4 py-2 font-bold uppercase text-blue-500 border rounded-md border-blue-500">
       Create Job
     </button>
     <button className="mx-2 sm:mr-4 sm:ml-6 w-8 py-1 font-bold bg-blue-500 text-white rounded-full">
